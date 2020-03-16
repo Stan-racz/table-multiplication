@@ -6,7 +6,9 @@
     <p>
       <small style="font-style:italic;">(val n = {{n}})</small>
     </p>
-    <TableMultiplication v-bind:n="parseInt(n)"/>
+    <div v-if="!isNaN(n)">
+      <TableMultiplication v-bind:n="parseInt(n)"/>
+   </div> 
     <hr/>
   </div>
 </template>
@@ -17,7 +19,7 @@
     name: "home",
     data: function () {
       return {
-        n: 7
+        n: 0
       };
     },
     components: {
@@ -35,5 +37,4 @@
     color: #2c3e50;
     margin-top: 60px;
   }
-
 </style>

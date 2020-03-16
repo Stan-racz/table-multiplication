@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h3>Table de 3</h3>
+    <h3>Table de {{n}}</h3>
     <table class="table-multiplication" >
       <tbody>
-         <TableRow v-bind:j="3" v-bind:i="1"/>
+        <TableRow v-for="nombre in 9" v-bind:j="nombre" v-bind:i="n"/>
       </tbody>
     </table>
     <br/>
@@ -12,12 +12,14 @@
 
 <script>
   import TableRow from "./TableRow.vue";
-
   export default {
     name: "TableMultiplication",
     components: {
       TableRow
     },
+    props: {
+      n: Number
+    }
   }
 </script>
 
